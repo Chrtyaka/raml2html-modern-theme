@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cat ./scss/main.scss | node-sass > ./dist/style.css",
-    "test": "cat ./scss/main.scss | node-sass > ./dist/style.css & raml2html --template ./index.nunjucks -i ./demo/raml-examples/ek-front-api-doc/spec/api.raml -o ./demo/api.html",
+    "test": "cat ./scss/main.scss | node-sass > ./dist/style.css & raml2html --template ./index.nunjucks -i ./demo/raml-examples/others/world-music-api/api.raml -o ./demo/api.html",
     "test:w": "watch -p \"/dist/\" -p \"/demo/\" \"npm run build-sass && npm run test\" ./",
     "prepublish": "npm run build"
   },
