@@ -19,6 +19,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css">
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
 
 		<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;subset=latin-ext" rel="stylesheet"> -->
@@ -50,7 +51,9 @@
 
 		<!-- content -->
 		<div class="main-content">
-
+      <div class="main-content__close" alt="Close sidebar" onclick="changeSidebarVisibility()">
+        <span class="main-content__close-inner"></span>
+      </div>
 			<!-- intro section -->
 			<article class="section section--separated" id="intro">
 				<div class="section__content container container--content">

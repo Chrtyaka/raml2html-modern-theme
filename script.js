@@ -139,6 +139,18 @@ function bindFilters() {
 
 }
 
+function changeSidebarVisibility() {
+  const [sidebar] = document.getElementsByClassName('sidebar');
+  const [content] = document.getElementsByClassName('main-content');
+  const [button] = document.getElementsByClassName('main-content__close');
+  const [buttonInner] = document.getElementsByClassName('main-content__close-inner');
+  sidebar.classList.toggle('sidebar--closed');
+  content.classList.toggle('main-content--sidebar-closed');
+  button.classList.toggle('main-content__close--opened');
+  buttonInner.classList.toggle('main-content__close-inner--closed')
+  
+}
+
 window.addEventListener("load", function() {
 
 	bindNavToggle();

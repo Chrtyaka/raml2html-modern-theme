@@ -184,8 +184,8 @@
 	<tr class="property">
 
 		<th class="table__col--name">
-			<span class="property__prefix">{{ prefix }}</span><span class="property__name">{%- if isArrayItem -%}[]{%- else -%}{{ propKey }}{%- endif -%}</span>
-			{%- if prop.required -%}<span class="property__required">*</span>{%- endif -%}
+			<span class="property__prefix">{{ prefix }}<span class="property__prefix--bold">{%- if isArrayItem -%}[]{%- else -%}{{ propKey }}{%- endif -%}</span>
+			{%- if prop.required -%}<span class="property__required">*</span>{%- endif -%}</span>
 
       {% if prop.rawType and prop.rawType.type and typesRegistry[prop.rawType.name] %}
         <span class="property__display-name"><a href="#type:{{ prop.rawType.name }}">{{ prop.displayName if prop.displayName else prop.rawType.name }}</a></span>
