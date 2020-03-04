@@ -1,11 +1,11 @@
 {
-  "name": "raml2html-modern-theme",
+  "name": "raml2html-modern-theme-modifying",
   "version": "1.0.8",
   "description": "Modern theme for raml2html utility.",
   "main": "index.js",
   "scripts": {
-    "build": "cat ./scss/main.scss | node-sass > ./dist/style.css",
-    "test": "cat ./scss/main.scss | node-sass > ./dist/style.css & raml2html --template ./index.nunjucks -i ./demo/raml-examples/others/world-music-api/api.raml -o ./demo/api.html",
+    "build": "(mkdir -p dist) && cat ./scss/main.scss | node-sass > ./dist/style.css",
+    "test": "((mkdir -p dist) && cat ./scss/main.scss | node-sass > ./dist/style.css) & raml2html --template ./index.nunjucks -i ./demo/raml-examples/ek-front-api-doc/spec/api.raml -o ./demo/api.html",
     "test:w": "watch -p \"/dist/\" -p \"/demo/\" \"npm run build-sass && npm run test\" ./",
     "prepublish": "npm run build"
   },
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jirihybek/raml2html-modern-theme#readme",
   "license": "MIT",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "raml",
     "raml2html",
