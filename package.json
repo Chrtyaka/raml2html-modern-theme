@@ -1,39 +1,21 @@
 {
-  "name": "raml2html-modern-theme-modifying",
-  "version": "1.0.8",
+  "name": "raml2html-moder-modify",
+  "version": "1.0.0",
   "description": "Modern theme for raml2html utility.",
-  "main": "index.js",
+  "main": "script.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "build": "cat ./scss/main.scss | node-sass > ./dist/style.css",
-    "test": "raml2html -v --template ./index.nunjucks -i ./demo/raml-examples/others/world-music-api/api.raml -o ./demo/api.html",
-    "test:w": "watch -p \"/dist/\" -p \"/demo/\" \"npm run build-sass && npm run test\" ./",
-    "prepublish": "npm run build"
-  },
-  "author": {
-    "name": "Jiri Hybek",
-    "email": "jiri@hybek.cz",
-    "url": "https://jiri.hybek.cz/"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jirihybek/raml2html-modern-theme.git"
+    "url": "git+https://github.com/Chrtyaka/raml2html-modern-theme.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jirihybek/raml2html-modern-theme/issues"
+    "url": "https://github.com/Chrtyaka/raml2html-modern-theme/issues"
   },
-  "homepage": "https://github.com/jirihybek/raml2html-modern-theme#readme",
-  "license": "MIT",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
-  "keywords": [
-    "raml",
-    "raml2html",
-    "modern",
-    "design",
-    "theme"
-  ],
-  "devDependencies": {
-    "node-sass": "^4.11.0",
-    "watch": "^1.0.2",
-    "raml2html": "^7.2.0"
-  }
+  "homepage": "https://github.com/Chrtyaka/raml2html-modern-theme#readme"
 }
