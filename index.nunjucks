@@ -35,10 +35,10 @@
 			hljs.initHighlightingOnLoad();
 
 			{% include "script.js" %}
+			{% include "versioning.js" %}
 		</script>
 	</head>
 	<body id="top">
-    <script src="./versioning.js"></script>
 		<!-- navigation -->
 		<div class="sidebar">
 			<div class="sidebar__logo">
