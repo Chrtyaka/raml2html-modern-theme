@@ -38,11 +38,14 @@
 		</script>
 	</head>
 	<body id="top">
+    <script src="./versioning.js"></script>
 		<!-- navigation -->
 		<div class="sidebar">
 			<div class="sidebar__logo">
 				<p class="sidebar__logo__title">{{ title }}</p>
 				<p class="sidebar__logo__description">API Documentation version <strong>{{ version }}</strong></p>
+        <span class="sidebar__logo__version"> Change version </span>
+        <select id="version-select" class="sidebar__logo__select"></select>
 			</div>
 			<div class="sidebar__nav">
 				{% include "nav.nunjucks" %}

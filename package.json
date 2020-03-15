@@ -2,11 +2,22 @@
   "name": "raml2html-moder-modify",
   "version": "1.0.0",
   "description": "Modern theme for raml2html utility.",
-  "main": "script.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "main": "index.js",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "watch": "^1.0.2",
+    "raml2html": "^7.2.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "versionsTest": "(cat ./version.json > ./demo/version.json) & (cat ./versioning.js > ./demo/versioning.js)",
+    "build": "cat ./scss/main.scss | node-sass > ./dist/style.css",
+    "test": "raml2html -v --template ./index.nunjucks -i ./demo/raml-examples/others/world-music-api/api.raml -o ./demo/api.html",
+    "test:w": "watch -p \"/dist/\" -p \"/demo/\" \"npm run build-sass && npm run test\" ./",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
