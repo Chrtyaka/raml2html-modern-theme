@@ -3,13 +3,14 @@ const getJson = async () => {
   return response.json();
 }
 
-let currentVersionLink = null;
+let lastVersionLink = null;
+let lastVersionName = null;
 
 const initRootVersion =  (linksObject) => {
   const versionsNumber = getVersionsNumber(linksObject);
   const lastVersion = Math.max(...versionsNumber);
-  
-  linksObject[`v${lastVersion + 1}`] = currentVersionLink;
+  lastVersionName = `v${lastVersion + 1}`;
+  linksObject[lastVersionName] = lastVersionLink;
   return linksObject;
 }
 
@@ -19,7 +20,7 @@ const getVersionFromUrl = (url) => {
   const startIndex = url.lastIndexOf('/') + 1;
   const endIndex = url.indexOf('_', startIndex);
   if (endIndex === -1) {
-    currentVersionLink = url;
+    lastVersionLink = url;
     return '';
   } 
   return url.slice(startIndex, endIndex);
@@ -53,4 +54,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   select.addEventListener('change', (event) => {
     document.location.replace(event.target.value);
   })
+
+  const currentVersion = getVersionFromUrl(window.location.href);
+  console.log(currentVersion);
+
+  if (!currentVersion) {
+    select.selectedIndex = 0;
+    return;
+  }
+
+  select.selectedIndex = Object.keys(linksObject).indexOf(currentVersion);
 })
