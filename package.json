@@ -4,7 +4,7 @@
   "description": "Modern theme for raml2html utility.",
   "main": "index.js",
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.2"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",
