@@ -32,7 +32,13 @@ function sortObject(o) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const json = await getJson();
+  const select = document.getElementById('version-select');
+  
   const { links } = json;
+  if (!links.length || links.length === 1) {
+    select.style.display = 'none';
+    return;
+  } 
   let linksObject = {};
   links.forEach(link => {
     const version = getVersionFromUrl(link);
@@ -45,8 +51,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   linksObject = initRootVersion(linksObject)
   linksObject = sortObject(linksObject);
 
-  const select = document.getElementById('version-select');
-
   Object.keys(linksObject).forEach(key => {
     select.options[select.options.length] = new Option(key, linksObject[key]);
   })
@@ -56,8 +60,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   })
 
   const currentVersion = getVersionFromUrl(window.location.href);
-  console.log(currentVersion);
-
   if (!currentVersion) {
     select.selectedIndex = 0;
     return;
