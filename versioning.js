@@ -33,6 +33,9 @@ function sortObject(o) {
 document.addEventListener('DOMContentLoaded', async () => {
   const json = await getJson();
   const { links } = json;
+  if (!links.length || links.length === 1) {
+    return;
+  } 
   let linksObject = {};
   links.forEach(link => {
     const version = getVersionFromUrl(link);
