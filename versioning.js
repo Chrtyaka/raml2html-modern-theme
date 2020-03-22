@@ -33,9 +33,10 @@ function sortObject(o) {
 document.addEventListener('DOMContentLoaded', async () => {
   const json = await getJson();
   const select = document.getElementById('version-select');
-  
+  const versionText = document.getElementById('version-text');
   const { links } = json;
   if (!links.length || links.length === 1) {
+    versionText.style.display = 'none';
     select.style.display = 'none';
     return;
   } 
